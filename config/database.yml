@@ -83,3 +83,5 @@ test:
 production:
   <<: *default
   database: portfolio_production
+  pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
