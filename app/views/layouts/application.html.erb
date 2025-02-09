@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for(:title) || "Portfolio" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= yield :head %>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<style>
+ :root {
+  --color-primary: #000080;
+  --color-secondary: #8080ff;
+  --color-tertiary: #4747d4;
+  --color-quaternary: #0e0e55;
+}
+</style>
+<body>
+  <%= render 'layouts/navbar' %>
+  <%= yield %>
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
+</body>
+<script>
+  document.getElementById('menu-btn').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+</html>
