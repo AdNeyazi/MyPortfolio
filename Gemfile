@@ -60,7 +60,7 @@ group :test do
 end
 gem "devise"
 gem "dotenv-rails"
-gem "carrierwave", "~> 2.2"
+gem "carrierwave", "~> 3.1"
 gem "rails_admin", "~> 3.1"
 gem "cssbundling-rails"
 gem "sassc-rails"
